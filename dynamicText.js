@@ -60,8 +60,7 @@ function filterCB(data){
           var newTextBoxDiv = $(document.createElement('div'))
                .attr("id", 'TextBoxDiv' + counter);
 
-          newTextBoxDiv.after().html('<label style="color:white;">Textbox #'+ counter + ' : </label>' +
-                '<input type="text" name="textbox' + counter +
+          newTextBoxDiv.after().html('<input type="text" name="textbox' + counter +
                 '" id="textbox' + counter + '" value="" style="width:35%;">');
 
           newTextBoxDiv.appendTo("#TextBoxesGroup");
