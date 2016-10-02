@@ -1,5 +1,52 @@
 
 
+		
+var api = "http://api.giphy.com/v1/gifs/search?";
+var apiKey = "&api_key=dc6zaTOxFJmzC";
+var query;
+
+
+//Declare some global array that holds the ouptuts
+
+var output = [];
+
+
+function setup(inputArray) {
+  
+  
+  //var outputvalue = document.getElementById('textboxName');
+  
+  //Get some user input in sentences through the webpage?
+  //Get the size of the input.
+
+  var input_size = inputArray.length;
+  
+  var url;
+  //var input_size = input.length;
+  for(var i = 0;i<input_size;i++){
+    //Get user input and store into some array
+    
+    //Change the search query.
+    query = "&q="+inputArray[i];
+    //Change the url
+    url = api + apiKey + query;
+    loadJSON(url,filterCB);
+  }
+  
+}
+
+//Filter the JSON to receive the most popular result and store the result in the array
+function filterCB(data){
+  //println(data.data[0].images.mp4);
+  println(data.data[0].images.fixed_height.mp4);
+  
+  //Push the filtered result into the output array
+  output.push(data.data[0].images.fixed_height.mp4);
+}
+
+
+
+
         $(document).ready(function(){
 
             var counter = 2;
@@ -45,7 +92,8 @@
               //msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
               msgAr.push($('#textbox' + i).val());
           }
-                alert(msgAr);
+                
+          		setup(msgAr);
                 return msgAr;
                 
              });
