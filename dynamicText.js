@@ -9,6 +9,7 @@ var query;
 //Declare some global array that holds the ouptuts
 
 var output = [];
+var mainCount = 0;
 
 
 function setup(inputArray,input_size) {
@@ -41,6 +42,7 @@ function filterCB(data){
   
   //Push the filtered result into the output array
   output.push(data.data[Math.floor((Math.random()*data.data.length)+1)].images.fixed_height.mp4);
+
 }
 
 
@@ -89,6 +91,7 @@ function filterCB(data){
           for(i=1; i<counter; i++){
               //msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
               msgAr.push($('#textbox' + i).val());
+	
           }
                 
           		setup(msgAr,i);
