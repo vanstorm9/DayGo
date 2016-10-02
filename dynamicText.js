@@ -16,7 +16,7 @@
 
           newTextBoxDiv.after().html('<label style="color:white;">Textbox #'+ counter + ' : </label>' +
                 '<input type="text" name="textbox' + counter +
-                '" id="textbox' + counter + '" value="" style="width:90%;">');
+                '" id="textbox' + counter + '" value="" style="width:35%;">');
 
           newTextBoxDiv.appendTo("#TextBoxesGroup");
 
