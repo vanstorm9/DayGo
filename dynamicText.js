@@ -39,9 +39,15 @@
              $("#getButtonValue").click(function () {
 
           var msg = '';
+          var msgAr = [];
+
           for(i=1; i<counter; i++){
-              msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+              //msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val();
+              msgAr.push($('#textbox' + i).val());
           }
-                alert(msg);
+                alert(msgAr);
+                return msgAr;
+                
              });
           });
+        
