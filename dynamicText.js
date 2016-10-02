@@ -36,10 +36,11 @@ function setup(inputArray,input_size) {
 //Filter the JSON to receive the most popular result and store the result in the array
 function filterCB(data){
   //println(data.data[0].images.mp4);
-  println(data.data[0].images.fixed_height.mp4);
+
+  println(data.data[Math.floor((Math.random()*data.data.length)+1)].images.fixed_height.mp4);
   
   //Push the filtered result into the output array
-  output.push(data.data[0].images.fixed_height.mp4);
+  output.push(data.data[Math.floor((Math.random()*data.data.length)+1)].images.fixed_height.mp4);
 }
 
 
