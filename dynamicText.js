@@ -11,18 +11,16 @@ var query;
 var output = [];
 
 
-function setup(inputArray) {
+function setup(inputArray,input_size) {
   
   
   //var outputvalue = document.getElementById('textboxName');
   
   //Get some user input in sentences through the webpage?
   //Get the size of the input.
-
-  var input_size = inputArray.length;
   
   var url;
-  //var input_size = input.length;
+
   for(var i = 0;i<input_size;i++){
     //Get user input and store into some array
     
@@ -93,7 +91,7 @@ function filterCB(data){
               msgAr.push($('#textbox' + i).val());
           }
                 
-          		setup(msgAr);
+          		setup(msgAr,i);
                 return msgAr;
                 
              });
