@@ -30,6 +30,8 @@ function setup(inputArray,input_size) {
     //Change the url
     url = api + apiKey + query;
     loadJSON(url,filterCB);
+
+    
   }
   
 }
@@ -42,7 +44,13 @@ function filterCB(data){
   
   //Push the filtered result into the output array
   output.push(data.data[Math.floor((Math.random()*data.data.length)+1)].images.fixed_height.mp4);
-
+  document.getElementById('MyVideo').src = output[0];
+    document.getElementById('MyVideo').load();
+    document.getElementById('MyVideo').play();
+    if(!(mainCount >= output.length - 1))
+    {
+      mainCount++;
+    }
 }
 
 
@@ -95,8 +103,9 @@ function filterCB(data){
           }
                 
           		setup(msgAr,i);
-                return msgAr;
+              
                 
              });
+
           });
         
