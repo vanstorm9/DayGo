@@ -13,7 +13,7 @@ var mainCount = 0;
 
 
 function setup(inputArray,input_size) {
-  
+  output = [];
   
   //var outputvalue = document.getElementById('textboxName');
   
